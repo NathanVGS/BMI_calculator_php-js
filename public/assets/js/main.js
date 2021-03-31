@@ -74,11 +74,10 @@ document.getElementById('updateHeight').addEventListener('click', (e) => {
 
 document.getElementById('reset-button').addEventListener('click', e => {
     let toReset = document.getElementById('reset').value;
-    console.log(toReset)
     switch (toReset){
-        case 'weight': resetWeight();
+        case 'weight': resetWeight().then(() => location.reload());
             break;
-        case 'height': resetHeight();
+        case 'height': resetHeight().then(() => location.reload());
             break;
     }
 })
