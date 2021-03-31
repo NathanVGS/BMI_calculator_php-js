@@ -1,9 +1,7 @@
 function getLabelsFrom(dataToRender){
     let labels = [];
     dataToRender.forEach(entry => {
-        //TODO convert dates to other format here?
         const date = new Date(entry.date)
-        console.log()
         labels.push(`${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`)
     })
 
@@ -69,7 +67,6 @@ export function renderChart(dataToRender){
                 }]
             },
             //responsive: true, //TODO make responsive?
-            //TODO fill chart with data stored on window object?
         }
     });
 }

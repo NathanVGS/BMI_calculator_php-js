@@ -40,7 +40,6 @@ if(count($result) > 0){
     $weight->bindValue(':id', $result['id']);
     $weight->execute();
     $weightResult = $weight->fetch(PDO::FETCH_ASSOC);
-    //var_dump($weightResult);
 }
 
 
@@ -51,16 +50,12 @@ if(count($result) === 0){
     $result = ['email' => $user->getEmail(), 'height' => null];
 }
 
-//var_dump($result);
-
-//var_dump($weightResult['date']);
-
 ?>
 
 <div class="h-full flex flex-col">
     <div class="w-full bg-gray-700 p-10 flex justify-between">
         <h2 class="text-4xl ml-10">BMI Calculator</h2>
-        <h2 class="text-3xl mr-48" id="welcome"></h2>
+        <h2 class="hidden md:block text-3xl mr-48" id="welcome"></h2>
         <a href="<?php echo 'https://' . $_SERVER['SERVER_NAME'] . '/logout/' ?>"><i title="Sign out" class="fas fa-sign-out-alt"></i></a>
     </div>
     <div class="md:w-4/5 w-full h-full border shadow-xl m-auto">
@@ -95,9 +90,13 @@ if(count($result) === 0){
                 </label>
                 <div class="col-span-2 flex justify-center">
                     <input
+                            class="bg-green-700 p-2 rounded-2xl text-2xl text-white"
+                            id="calculateBMI" type="button" value="Calculate BMI">
+                    <input
                             class="bg-blue-700 p-2 rounded-2xl text-2xl text-white"
-                            id="submitWeight" type="submit" value="Submit">
+                            id="submitWeight" type="submit" value="Save weight">
                 </div>
+                <div class="col-span-2 text-center mt-4" id="bmi-result"></div>
             </form>
 
             <div id="canvas-container">
