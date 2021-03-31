@@ -84,8 +84,8 @@ document.getElementById('reset-button').addEventListener('click', e => {
 
 document.getElementById('calculateBMI').addEventListener('click', e => {
     let bmi;
-    if(!userHeight){
-        bmi = 'You have to set a height first'
+    if(!window.userHeight){
+        bmi = 'You have to set your height first'
     } else {
         const weight = document.getElementById('weight').value;
         bmi = 'Your BMI score is: ' + calculateBMI(userHeight, weight);
