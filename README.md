@@ -34,6 +34,25 @@ Facebook requires an https redirect, so you'll need a (self-signed) certificate.
 
 ## 2. Set up your database
 
+SQL to set up the basic tables:
+
+```sql
+CREATE TABLE weight ( 
+id int NOT NULL AUTO_INCREMENT, 
+weight float NOT NULL, 
+userId int NOT NULL, 
+date date NOT NULL, 
+PRIMARY KEY (id) 
+);
+
+CREATE TABLE user (
+id int NOT NULL AUTO_INCREMENT,
+email varchar(255) NOT NULL,
+height int,
+PRIMARY KEY (id)
+)
+```
+
 ## 3. Create an app on the Facebook Developer page
 
 https://developers.facebook.com/ (go to My Apps and click 'Create App' and pick 'Build Connected Experiences').
